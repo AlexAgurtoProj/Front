@@ -1,0 +1,50 @@
+<div class="bg-gray-100 h-full p-4 flex flex-col">
+
+  <div class="container_info"> <!--Sección de arriba-->
+    <img src = 'img/referencia.png' style="width: 40px;height: 40px; margin-right: 8px;">
+    <div style="font-family: monospace;align-items: center;font-size: 15px;">Workspace</div>
+
+    <div class="iconos_secundarios">
+          <button id="dropdownNotificationButton" data-dropdown-toggle="dropdownNotification" class="relative inline-flex items-center text-sm font-medium text-center text-gray-500 hover:text-gray-900 focus:outline-none dark:hover:text-white dark:text-gray-400" type="button">
+            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 14 20">
+            <path d="M12.133 10.632v-1.8A5.406 5.406 0 0 0 7.979 3.57.946.946 0 0 0 8 3.464V1.1a1 1 0 0 0-2 0v2.364a.946.946 0 0 0 .021.106 5.406 5.406 0 0 0-4.154 5.262v1.8C1.867 13.018 0 13.614 0 14.807 0 15.4 0 16 .538 16h12.924C14 16 14 15.4 14 14.807c0-1.193-1.867-1.789-1.867-4.175ZM3.823 17a3.453 3.453 0 0 0 6.354 0H3.823Z"/>
+            </svg>
+          </button>
+          <div class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center font-semibold">U</div>
+    </div>
+  </div> <!--Sección de arriba-->
+
+
+  <div class="contenedor_inferior">
+        <!-- Sección Files con flechita -->
+      <div (click)="toggleFiles()" class="flex items-center justify-between cursor-pointer mb-2 px-2 py-1 hover:bg-gray-200 rounded">
+        <span class="text-sm font-semibold text-gray-600">Files</span>
+        <svg
+          [ngClass]="{'rotate-180': showFilesSection}"
+          class="w-4 h-4 transform transition-transform text-gray-500"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+        </svg>
+      </div>
+
+      <!-- Lista de navegación colapsable -->
+      <nav *ngIf="showFilesSection" class="flex-1">
+        <ul class="space-y-2 text-sm text-gray-800">
+          <li class="py-2 pl-2 rounded cursor-pointer hover:bg-blue-100 bg-blue-200">Personal Files</li>
+          <li class="py-2 pl-2 rounded cursor-pointer hover:bg-blue-100">My Libraries</li>
+          <li class="py-2 pl-2 rounded cursor-pointer hover:bg-blue-100">Favorite Libraries</li>
+          <li class="py-2 pl-2 rounded cursor-pointer hover:bg-blue-100">All Libraries</li>
+          <li class="py-2 pl-2 rounded cursor-pointer hover:bg-blue-100">Recent Files</li>
+          <li class="py-2 pl-2 rounded cursor-pointer hover:bg-blue-100">To Do</li>
+          <li class="py-2 pl-2 rounded cursor-pointer hover:bg-blue-100">Favorites</li>
+          <li class="py-2 pl-2 rounded cursor-pointer hover:bg-blue-100">Shared</li>
+          <li class="py-2 pl-2 rounded cursor-pointer hover:bg-blue-100">Trash</li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  

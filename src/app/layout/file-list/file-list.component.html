@@ -1,0 +1,58 @@
+<!-- file-list.component.html -->
+<div class="flex flex-col text-sm text-gray-700 border border-t-0 border-gray-300">
+  <!-- Header row -->
+  <div class="grid grid-cols-6 items-center px-4 py-2 bg-gray-100 border-b border-gray-300 font-semibold">
+    <div class="col-span-2 flex items-center space-x-2">
+      <button>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h18M3 17h18" />
+        </svg>
+      </button>
+      <span>Name</span>
+      <button>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-gray-500" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M4 7h16M6 11h12M10 15h4" />
+        </svg>
+      </button>
+    </div>
+    <div>Size</div>
+    <div>Modified</div>
+    <div>Modified by</div>
+    <div>Security Marks</div>
+  </div>
+
+  <!-- File Rows -->
+  <div *ngFor="let file of files" class="grid grid-cols-6 items-center px-4 py-2 hover:bg-gray-50">
+    <div class="col-span-2 flex items-center space-x-2">
+      <img [src]="getIcon(file.type)" class="w-5 h-5" alt="icon" />
+      <span>{{ file.name }}</span>
+    </div>
+    <div>{{ file.size }}</div>
+    <div>{{ file.modifiedDate }}</div>
+    <div>{{ file.modifiedBy }}</div>
+    <div>{{ file.securityMark || '-' }}</div>
+  </div>
+
+  <!-- Footer -->
+  <div class="flex items-center justify-between px-4 py-2 bg-gray-50 border-t border-gray-300 text-xs">
+    <div>Showing 1–{{ files.length }} of {{ files.length }}</div>
+    <div class="flex items-center space-x-2">
+      <span>Items per page</span>
+      <select class="border border-gray-300 rounded px-1 py-0.5 text-sm">
+        <option>25</option>
+        <option>50</option>
+        <option>100</option>
+      </select>
+      <button>
+        <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+      <button>
+        <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>

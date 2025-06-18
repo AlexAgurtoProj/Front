@@ -1,0 +1,13 @@
+<!-- layout.component.html -->
+<div class="flex h-screen">
+  <!-- Sidebar -->
+  <app-sidebar class="w-64 border-r border-gray-300"></app-sidebar>
+
+  <!-- Main Content with Header -->
+  <div class="flex-1 flex flex-col">
+    <app-header-actions></app-header-actions>
+      <div class="flex-1 bg-white">
+    <app-file-list></app-file-list>
+  </div>
+  </div>
+</div>
